@@ -1,0 +1,17 @@
+server:
+  port: 8888
+
+spring:
+  profiles:
+    include: secret
+  application:
+    name: spring-cloud-config-server
+  cloud:
+    config:
+      server:
+        encrypt:
+          enabled: true
+        git:
+          uri: https://github.com/hyeongmug/study-config-repository.git
+          username: ${GIT_USERNAME}
+          password: ${GIT_PASSWORD}
