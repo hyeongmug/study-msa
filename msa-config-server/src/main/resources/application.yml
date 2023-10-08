@@ -10,8 +10,17 @@ spring:
     config:
       server:
         encrypt:
-          enabled: true
+          enabled: false # 컨피그 서버에서 복호화 비활성
         git:
           uri: https://github.com/hyeongmug/study-config-repository.git
-          username: ${GIT_USERNAME}
-          password: ${GIT_PASSWORD}
+          username: '{cipher}11cfd89bbb88af60736fd56a00ac0c69c12d7d23f8c360ff8fe2bca5c27214114ed62a3f9cdeba870b0c899204bbee3c'
+          password: '{cipher}51135cdac0cb9a25c576e5042413d4687fcba675c1f773a1e6fa03bae6b383566d63976f42da92e636406fb6b29b8f6b0739868ea5310d5b593cd462a57afd7f'
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*" # test only
+
+encrypt:
+  key: ${ENCRYPT_KEY}

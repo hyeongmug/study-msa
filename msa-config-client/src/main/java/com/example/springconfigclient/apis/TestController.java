@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Map;
+
 @RestController
 @RequestMapping("/")
 @RefreshScope
@@ -14,8 +16,11 @@ public class TestController {
     @Value("${test}")
     private String test;
 
+    @Value("${encryptTestMessage}")
+    private String encryptTestMessage;
+
     @GetMapping("/test")
-    public String test() {
-        return test;
+    public Map<String, String> test() {
+        return Map.of("test", test, "encryptTestMessage", encryptTestMessage);
     }
 }
