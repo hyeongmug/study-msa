@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: application
+  profiles:
+    active: dev
+  config:
+    import: optional:configserver:http://localhost:8888 # config server url
+  cloud:
+    config:
+      label: main
+
+server:
+  port: 8080
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*" # test only
