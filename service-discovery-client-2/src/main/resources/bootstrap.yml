@@ -1,6 +1,6 @@
 spring:
   application:
-    name: service-discovery-client
+    name: service-discovery-client-2
   profiles:
     active: dev
   config:
