@@ -8,6 +8,8 @@ spring:
   cloud:
     config:
       label: main
+    loadbalancer:
+      enabled: true
 
 server:
   port: 8761

@@ -1,6 +1,7 @@
 package com.example.servicediscoveryclient.apis.test;
 
 import com.example.servicediscoveryclient.apis.test.client.TestDiscoveryClient;
+import com.example.servicediscoveryclient.apis.test.client.TestRestTemplateClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,14 +17,22 @@ public class TestController {
     @Autowired
     private TestDiscoveryClient testDiscoveryClient;
 
-    @GetMapping("/{clientType}")
-    public Map<String, String> getTestDataOtherServiceWithClientType(@PathVariable String clientType) {
+    @Autowired
+    private TestRestTemplateClient testRestTemplateClient;
 
-        Map<String, String> result = null;
+    @GetMapping("/{clientType}")
+    public Map getTestDataOtherServiceWithClientType(@PathVariable String clientType) {
+
+        Map result = null;
 
         switch (clientType) {
             case "discovery":
                 result = testDiscoveryClient.clientTest();
+                break;
+            case "rest":
+                result = testRestTemplateClient.clientTest();
+                break;
+            case "feign":
                 break;
         }
 
