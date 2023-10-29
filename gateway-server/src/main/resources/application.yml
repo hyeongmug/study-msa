@@ -1,0 +1,23 @@
+server:
+  port: 8080
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator: # 서비스 디스커버리에 등록된 서비스를 기반으로 라우팅
+          enabled: true
+          lower-case-service-id: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*" # test only
