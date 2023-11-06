@@ -8,3 +8,9 @@ spring:
   cloud:
     config:
       label: main
+
+logging:
+  level:
+    com.netflix: WARN
+    org.springframework.web: WARN
+    com.example: DEBUG

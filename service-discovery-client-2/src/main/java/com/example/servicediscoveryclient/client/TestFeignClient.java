@@ -1,4 +1,4 @@
-package com.example.servicediscoveryclient.apis.test.client;
+package com.example.servicediscoveryclient.client;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;

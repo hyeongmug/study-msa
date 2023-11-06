@@ -1,8 +1,8 @@
-package com.example.servicediscoveryclient.apis.test;
+package com.example.servicediscoveryclient.controller;
 
-import com.example.servicediscoveryclient.apis.test.client.TestDiscoveryClient;
-import com.example.servicediscoveryclient.apis.test.client.TestFeignClient;
-import com.example.servicediscoveryclient.apis.test.client.TestRestTemplateClient;
+import com.example.servicediscoveryclient.client.TestDiscoveryClient;
+import com.example.servicediscoveryclient.client.TestFeignClient;
+import com.example.servicediscoveryclient.client.TestRestTemplateClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

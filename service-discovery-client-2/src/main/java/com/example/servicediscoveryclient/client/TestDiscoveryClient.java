@@ -1,4 +1,4 @@
-package com.example.servicediscoveryclient.apis.test.client;
+package com.example.servicediscoveryclient.client;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
